@@ -1,4 +1,3 @@
-
 friends = [
     {
         "name": "Bob",
