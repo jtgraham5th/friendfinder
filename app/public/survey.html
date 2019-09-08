@@ -180,14 +180,25 @@
           <h2 class="modal-title"><strong>Best Match</strong></h2>
         </div>
         <div class="modal-body">
-          <h2 id="match-name"></h2>
-          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="" class="img-thumbnail">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-6">
+                <h2 id="user-name" class="text-center"></h2>
+                <img id="user-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg"
+                  alt="" width=200px>
+              </div>
+              <div class="col-sm-6">
+                <h2 id="match-name" class="text-center"></h2>
+                <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg"
+                  alt="" width=200px>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
   </div>
 
@@ -276,13 +287,15 @@
                   // console.log(data[i].name,data[i].scores[x]);
                   // console.log(userData.name,userData.scores[x])
                   totalDifference += Math.abs((data[i].scores[x]) - (userData.scores[x]))
-                  console.log(totalDifference,"----")
+                  console.log(totalDifference, "----")
                 }
                 compareArray.push(totalDifference);
               }
               var friendMatch = parseInt(compareArray.indexOf(Math.min(...compareArray)));
               console.log(friendMatch);
               console.log(compareArray);
+              $("#user-name").text(userData.name);
+              $("#user-img").attr("src",userData.photo)
               $("#match-name").text(data[friendMatch].name);
               $("#match-img").attr("src", data[friendMatch].photo);
               $("#results-modal").modal("toggle");
