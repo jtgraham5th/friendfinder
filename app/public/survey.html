@@ -20,9 +20,16 @@
 </head>
 
 <body>
-
+  <header class="header bg-primary">
+    <div class="container">
+      <p>
+        <h3><a href="/*" style="color: white">Home</a> | <a href="https://github.com/jtgraham5th/friendfinder"
+            style="color: white">GitHub
+            Repo</a></h3>
+      </p>
+    </div>
+  </header>
   <div class="container">
-
     <h2>Survey Questions</h2>
     <hr>
 
@@ -295,7 +302,7 @@
               console.log(friendMatch);
               console.log(compareArray);
               $("#user-name").text(userData.name);
-              $("#user-img").attr("src",userData.photo)
+              $("#user-img").attr("src", userData.photo)
               $("#match-name").text(data[friendMatch].name);
               $("#match-img").attr("src", data[friendMatch].photo);
               $("#results-modal").modal("toggle");
