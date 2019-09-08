@@ -6,7 +6,6 @@ module.exports = function apiRoutes(app) {
     //display tables
     app.get("/api/friends", function (req, res) {
         res.json(friendsData);
-        console.log("friendsData[0].scores[0]: " + friendsData[0].score[0]);
     });
     app.post("/api/friends", function (req, res) {
         // req.body hosts is equal to the JSON post sent from the user
